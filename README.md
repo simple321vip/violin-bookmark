@@ -1,2 +1,4 @@
-# STS_DB
-this is a repository for Spring-Boot development.
+##### Gシリーズ　親プロジェクト
+
+- g-school  学習用、資料、メモ、ツールなど
+- g-estate  webアプリ
