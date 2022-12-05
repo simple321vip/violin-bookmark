@@ -132,7 +132,6 @@ spec:
             sh """
               docker login ${registryUrl} --username=${DOCKER_USER} -p ${DOCKER_PASSWORD}
               docker build -t ${image} .
-              sh clear.sh
               docker push ${image}
               """
           }
