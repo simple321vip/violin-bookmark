@@ -186,4 +186,13 @@ public class BookmarkService {
 //        mongoTemplate.save(bookmarkType);
     }
 
+    public long getWikiCount(Tenant tenant) {
+        Criteria criteria = Criteria.where("owner").is(tenant.getTenantId());
+        Query query = Query.query(criteria);
+
+        long count = mongoTemplate.count(query, Bookmark.class);
+
+        return count;
+    }
+
 }
