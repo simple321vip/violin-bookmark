@@ -1,23 +1,6 @@
 ## プログラム紹介
 violin-bookmark, a backend program to support for violin online edit function.
 
-### kubernetes
-we use kubernetes to deployment 
-> the violin-bookmark is built on kubernetes.
-> service, storageclass, pvc, deployment
-
-### framework
-> springboot, jedis and so on. for more, we can see pom.xml
- 
-### about security
-
-> baidu cloud oauth -> token -> redis + token
-> redis as a kubernetes service opened only for violin-auth application that to save token as a cache one day. 
-
-### server
-
-> the backend server tomcat embedded in the springboot used.
-
 ### database
 - mongodb
   基于B-树的文档数据库，各个节点上都存有数据，单次查询速度极快

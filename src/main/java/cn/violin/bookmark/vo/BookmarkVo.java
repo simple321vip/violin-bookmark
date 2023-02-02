@@ -25,4 +25,7 @@ public class BookmarkVo {
     @JsonProperty("url")
     private String url;
 
+    @JsonProperty("count")
+    private long count;
+
 }

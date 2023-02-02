@@ -1,5 +1,6 @@
 package cn.violin.bookmark.controller;
 
+import cn.violin.bookmark.entity.Bookmark;
 import cn.violin.bookmark.io.BookmarkIn;
 import cn.violin.bookmark.service.BookmarkService;
 import cn.violin.bookmark.vo.BookmarkVo;
@@ -74,6 +75,19 @@ public class BookmarkCtl {
     public ResponseEntity<Void> deleteBookmarkType(@Valid @RequestBody() BookmarkIn input, @CurrentUser Tenant tenant) {
         bookmarkService.editBookmarkType(input);
         return new ResponseEntity<>(HttpStatus.OK);
+    }
+
+    /**
+     * @param tenant tenant
+     *
+     * @return BookmarkVo
+     */
+    @GetMapping("/bookmark/count")
+    public ResponseEntity<BookmarkVo> getBookmarkCount(@CurrentUser Tenant tenant) {
+        long count = bookmarkService.getWikiCount(tenant);
+        BookmarkVo vo = BookmarkVo.builder().count(count).build();
+
+        return new ResponseEntity<>(vo, HttpStatus.OK);
     }
 
 }
