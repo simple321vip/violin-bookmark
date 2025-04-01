@@ -4,21 +4,29 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import org.springframework.data.mongodb.core.mapping.Document;
 
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-@Document(collection = "t_bookmark")
+@Entity
+@Table(name = "T_BOOKMARK")
 @Builder
 public class Bookmark {
     @Id
     private String id;
-    private String deleteFlg;
-    private String typeId;
+
+    @Column(name = "comment")
     private String comment;
+
+    @Column(name = "url")
     private String url;
-    private String owner;
+
+    @Column(name = "tenant_id")
+    private String tenantId;
+
+    @ManyToOne
+    @JoinColumn(name = "type_id")
+    private BookmarkType bookmarkType;
 }

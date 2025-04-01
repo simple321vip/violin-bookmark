@@ -1,4 +1,4 @@
-package cn.violin.bookmark.io;
+package cn.violin.bookmark.request;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.AllArgsConstructor;
@@ -10,7 +10,7 @@ import lombok.Setter;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-public class BookmarkIn {
+public class BookmarkForm {
 
     @JsonProperty("bk_id")
     private String id;
@@ -23,9 +23,6 @@ public class BookmarkIn {
 
     @JsonProperty("comment")
     private String comment;
-
-    @JsonProperty("delete_flg")
-    private String deleteFlg;
 
     @JsonProperty("bookmark_type_name")
     private String typeName;
