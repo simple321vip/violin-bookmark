@@ -61,7 +61,7 @@ public class BookmarkService {
         builder.and(qBookmark.tenantId.eq(tenant.getTenantId()));
 
         if (Objects.nonNull(typeIds) && typeIds.length != 0) {
-            builder.and(qBookmark.typeId.in(typeIds));
+            builder.and(qBookmark.bookmarkType.typeId.in(typeIds));
         }
 
         // 动态构建 OR 条件组
